@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Project</title>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <!-- Needed for JSX to work-->
+        <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <style>
+            .heading{
+                color: purple;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root">
+            <script type="text/babel">
+                let city = "Madrid";
+
+                //Have to capitalize the component in order for it to work
+                const Hello = () => {
+                    return (
+                        <div className = "heading">
+                            <h1> Welcome to {city} </h1>
+                        </div>
+                    );
+
+                }
+                
+
+                ReactDOM.render(
+                    <Hello />, document.getElementById("root")
+                    );
+            </script>
+
+        </div>
+    </body>
+
+</html>
