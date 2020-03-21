@@ -8,7 +8,7 @@
         <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
         <style>
-            .heading{
+            .item{
                 color: purple;
             }
         </style>
@@ -16,22 +16,24 @@
     <body>
         <div id="root">
             <script type="text/babel">
-                let city = "Madrid";
+                
+                const Lake = ({name}) => <li className="item"> {name} </li>;
 
-                //Have to capitalize the component in order for it to work
-                const Hello = ({library, message}) => {
+                const App = () =>{
                     return (
-                        <div className = "heading">
-                            <h1> Welcome to {library} </h1>
-                            <p> {message} </p>
-                        </div>
-                    );
-
+                        <ul>
+                            <Lake name="Lake Tahoe" />
+                            <Lake name="Lake Mainstay" />
+                            <Lake name="Lake Baganara" />
+                            <Lake name="Cathedral Lake" />
+                        </ul>
+                    )
                 }
+
                 
 
                 ReactDOM.render(
-                    <Hello library="React" message="Enjoy!"/>, document.getElementById("root")
+                    <App />, document.getElementById("root")
                     );
             </script>
 
