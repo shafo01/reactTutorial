@@ -19,10 +19,11 @@
                 let city = "Madrid";
 
                 //Have to capitalize the component in order for it to work
-                const Hello = () => {
+                const Hello = ({library, message}) => {
                     return (
                         <div className = "heading">
-                            <h1> Welcome to {city} </h1>
+                            <h1> Welcome to {library} </h1>
+                            <p> {message} </p>
                         </div>
                     );
 
@@ -30,7 +31,7 @@
                 
 
                 ReactDOM.render(
-                    <Hello />, document.getElementById("root")
+                    <Hello library="React" message="Enjoy!"/>, document.getElementById("root")
                     );
             </script>
 
