@@ -22,16 +22,24 @@
             const Lake = ({ name }) => <li className="item"> {name} </li>;
 
             class App extends React.Component {
+
+                state = {
+                    loggedIn : true
+                }
+                
                 render() {
                     return (
-                        <ul>
-                            <Lake name="Lake Tahoe" />
-                            <Lake name="Lake Mainstay" />
-                            <Lake name="Lake Baganara" />
-                            <Lake name="Cathedral Lake" />
-                        </ul>
-                    )
+                        <div>
+                            <div> {this.state.loggedIn ? "user logged in" : "not logged in"}</div>
 
+                            <ul>
+                                <Lake name="Lake Tahoe" />
+                                <Lake name="Lake Mainstay" />
+                                <Lake name="Lake Baganara" />
+                                <Lake name="Cathedral Lake" />
+                            </ul>
+                        </div>
+                    )
                 }
             }
 
