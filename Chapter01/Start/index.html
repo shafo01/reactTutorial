@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>React Project</title>
-        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-        <!-- Needed for JSX to work-->
-        <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-        <style>
-            .item{
-                color: purple;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="root">
-            <script type="text/babel">
-                
-                const Lake = ({name}) => <li className="item"> {name} </li>;
+<head>
+    <title>React Project</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- Needed for JSX to work-->
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-                const App = () =>{
+    <style>
+        .item {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <script type="text/babel">
+
+            const Lake = ({ name }) => <li className="item"> {name} </li>;
+
+            class App extends React.Component {
+                render() {
                     return (
                         <ul>
                             <Lake name="Lake Tahoe" />
@@ -28,16 +31,17 @@
                             <Lake name="Cathedral Lake" />
                         </ul>
                     )
+
                 }
+            }
 
-                
 
-                ReactDOM.render(
-                    <App />, document.getElementById("root")
-                    );
-            </script>
+            ReactDOM.render(
+                <App />, document.getElementById("root")
+            );
+        </script>
 
-        </div>
-    </body>
+    </div>
+</body>
 
 </html>
