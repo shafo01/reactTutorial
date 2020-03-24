@@ -22,18 +22,26 @@
             const Lake = ({ name }) => <li className="item"> {name} </li>;
             const SkiResort = ({ name }) => <li className="item"> {name} </li>;
 
-            const App = ({ summer }) => (
-                <div>
-                    {summer
-                        ? <Lake name="Lake Tahoe" />
-                        : <SkiResort name="Alpine Meadows" />}
-                </div>
+            const lakeList = [
+                "Echo Lake",
+                "Maud Lake",
+                "Cascade Lake"
+            ];
+
+            const App = ({ lakes }) => (
+                <ul>
+                    {
+                        lakes.map((lake, i) =>
+                            <li key={i}>{lake}</li>
+                        )
+                    }
+                </ul>
 
             )
 
 
             ReactDOM.render(
-                <App summer={true} />, document.getElementById("root")
+                <App lakes={lakeList} />, document.getElementById("root")
             );
         </script>
 
