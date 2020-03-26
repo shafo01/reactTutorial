@@ -23,16 +23,16 @@
             const SkiResort = ({ name }) => <li className="item"> {name} </li>;
 
             const lakeList = [
-                "Echo Lake",
-                "Maud Lake",
-                "Cascade Lake"
+                {id:1, name:"Echo Lake"},
+                {id:2, name:"Maud Lake"},
+                {id:3, name:"Cascade Lake"}
             ];
 
             const App = ({ lakes }) => (
                 <ul>
                     {
-                        lakes.map((lake, i) =>
-                            <li key={i}>{lake}</li>
+                        lakes.map((lake) =>
+                            <li key={lake.id}>{lake.name}</li>
                         )
                     }
                 </ul>
